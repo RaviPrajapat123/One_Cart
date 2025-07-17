@@ -31,47 +31,54 @@ function Order() {
         loadOrderData()
     },[])
   return (
-    <div className='w-full min-h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025]  p-[20px] pb-[150px] overflow-hidden'>
-        <div className='h-[8%] w-[100%] text-center mt-[80px]'>
-            <Title text1={'MY'} text2={'ORDER'}/>
-        </div>
-        <div className='w-[100%] h-[92%] flex flex-wrap gap-[20px]'>
-            {
-                orderData.map((item,i)=>(
-                    <div key={i} className='w-[100%] h-[10%] border-t border-b'>
-                        <div className='w-[100%] h-[80%] flex items-start gap-6 bg-[#51808048] py-[10px] px-[20px] rounded-2xl relative'>
-                            <img src={item.image1} alt=""  className='w-[130px] h-[130px] rounded-md'/>
-                            <div className='flex items-center justify-center flex-col ga-[5px]'>
-                                <p className='md:text-[25px] text-[20px] text-[#f3f9fc]'>{item.name}</p>
-                                <div className='flex items-center gap-[8px] md:gap-[20px]'>
-                                    <p className='md:text-[18px] text-[12px] text-[#aaf4e7]'>{currency} {item.price}</p>
-                                    <p className='md:text-[18px] text-[12px] text-[#aaf4e7]'>Quantity: {item.quantity}</p>
-                                    <p className='md:text-[18px] text-[12px] text-[#aaf4e7]'>Size: {item.size}</p>
-                                </div>
-                                <div className='flex items-center'>
-                                    <p className='md:text-[18px] text-[12px] text-[#aaf4e7]'>Date: <span className='text-[#e4fbff] pl-[10px] md:text-[16px] text-[11px]'>{new Date(item.date).toDateString()}</span></p>
-                                </div>
-                                <div className='flex items-center'>
-                                    <p className='md:text-[16px] text-[12px] text-[#aaf4e7]'>Payment Method :{item.paymentMethod}</p>
-                                </div>
-                                <div className='absolute md:left-[55%] md:top-[40%] right-[2%] top-[2%]'>
-                                    <div className='flex items-center gap-[5px]'>
-                                        <p className='min-w-2 h-2 rounded-full bg-green-500'></p>
-                                        <p className='md:text-[17px] text-[10px] text-[#f3f9fc]'>{item.status}</p>
-                                    </div>
-                                </div>
-                                <div className='absolute md:right-[5%] right-[2%] md:top-[40%] top-[65%]'>
-                                    <button className='px-[15px] py-[7px] rounded-md bg-[#101919] text-[#f3f9fc] text-[12px] md:text-[16px] cursor-pointer active:bg-slate-500' onClick={loadOrderData}>Track Order</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                ))
+  <div className='w-full min-h-screen bg-gradient-to-l from-[#141414] to-[#0c2025] px-4 sm:px-6 md:px-10 py-10 pb-40'>
+      <div className='text-center mt-16 sm:mt-20'>
+        <Title text1='MY' text2='ORDER' />
+      </div>
 
-            }
-        </div>
-    </div>
-  )
+      <div className='w-full mt-10 flex flex-col gap-6'>
+        {orderData.map((item, i) => (
+          <div key={i} className='w-full border-t border-b border-gray-600 pt-4 pb-6'>
+            <div className='w-full flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 bg-[#51808048] p-4 sm:p-6 rounded-2xl relative'>
+              {/* Product Image */}
+              <img src={item.image1} alt={item.name} className='w-full sm:w-[150px] h-[150px] object-cover rounded-lg' />
+
+              {/* Order Info */}
+              <div className='flex-1 flex flex-col gap-2 text-[#f3f9fc]'>
+                <p className='text-lg sm:text-xl md:text-2xl font-semibold'>{item.name}</p>
+
+                <div className='flex flex-wrap gap-3 text-sm sm:text-base text-[#aaf4e7]'>
+                  <p>💰 {currency} {item.price}</p>
+                  <p>📦 Quantity: {item.quantity}</p>
+                  <p>📐 Size: {item.size}</p>
+                </div>
+
+                <p className='text-xs sm:text-sm text-[#aaf4e7]'>
+                  🗓️ Date: <span className='text-[#e4fbff] pl-1'>{new Date(item.date).toDateString()}</span>
+                </p>
+
+                <p className='text-xs sm:text-sm text-[#aaf4e7]'>💳 Payment Method: {item.paymentMethod}</p>
+
+                {/* Status & Track Order */}
+                <div className='flex justify-between items-center flex-wrap mt-3'>
+                  <div className='flex items-center gap-2'>
+                    <span className='w-3 h-3 rounded-full bg-green-500'></span>
+                    <p className='text-sm sm:text-base'>{item.status}</p>
+                  </div>
+
+                  <button
+                    className='mt-2 sm:mt-0 px-4 py-2 bg-[#101919] hover:bg-[#1c2c2c] text-white text-xs sm:text-sm rounded-md transition duration-200'
+                    onClick={loadOrderData}
+                  >
+                    Track Order
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>  )
 }
 
 export default Order

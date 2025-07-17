@@ -13,9 +13,9 @@ import ProtectedAdminRoute from './components/ProtectedAdminRoute';
 const AppContent = () => {
   return (
     <Routes>
-      <Route path='/' element={<Navigate to="/admin/login" />} />
+{/*       <Route path='/' element={<Navigate to="/admin/login" />} /> */}
 
-      <Route path='/admin/login' element={<Login />} />
+      <Route path='/' element={<Login />} />
 
       <Route path='/admin/home' element={
         <ProtectedAdminRoute><Home /></ProtectedAdminRoute>

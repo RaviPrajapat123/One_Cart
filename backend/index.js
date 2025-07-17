@@ -114,8 +114,8 @@ fastify.post("/login", async (req, reply) => {
     reply.setCookie("token_user", token, {
       path: "/",
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 30 * 24 * 60 * 60,
     });
 
@@ -191,8 +191,8 @@ fastify.post("/googleLogin", async (req, reply) => {
     reply.setCookie("token_user", token, {
       path: "/",
       httpOnly: true,
-      secure: false, // use true in production with HTTPS
-      sameSite: "lax",
+      secure: true, // use true in production with HTTPS
+      sameSite: "none",
       maxAge: 30 * 24 * 60 * 60,
     });
 
@@ -243,8 +243,8 @@ fastify.post("/adminLogin", async (req, reply) => {
     reply.setCookie("token_admin", token, {
       path: "/",
       httpOnly: true,
-      sameSite: "lax",
-      secure: false, // set true in production (https)
+      sameSite: "none",
+      secure: true, // set true in production (https)
       maxAge: 30 * 24 * 60 * 60,
     });
 

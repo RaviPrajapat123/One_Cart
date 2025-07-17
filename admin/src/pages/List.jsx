@@ -12,7 +12,7 @@ function List() {
     },[])
     const fetchList=async()=>{
         try {
-             let response=await axios.get("http://localhost:3000/allProducts")
+             let response=await axios.get("https://one-cart-backend-mene.onrender.com/allProducts")
              if(response.data.success){
                 setList(response.data.data)
              }
@@ -28,7 +28,7 @@ function List() {
         try {
                 if(window.confirm("Are you sure to delete Product?")){
 
-                    let result=await axios.delete(`http://localhost:3000/removeProduct/${id}`)
+                    let result=await axios.delete(`https://one-cart-backend-mene.onrender.com/removeProduct/${id}`)
                     if(result.data.success){
                         alert(result.data.message)
                         fetchList()

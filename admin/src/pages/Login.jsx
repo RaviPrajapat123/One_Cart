@@ -6,6 +6,7 @@ import { useAdmin } from '../context/authContext';
 // import { signInWithPopup } from 'firebase/auth';
 // import {auth, provider } from '../../utils/Firebase';
 // import { useUser } from '../context/UserContext';
+import logo from "../assets/logo.png"
 function Login() {
   const navigate = useNavigate();
    const {admin,fetchAdmin}=useAdmin()
@@ -83,7 +84,7 @@ function Login() {
       
       {/* Header */}
       <div className='w-full h-[80px] flex items-center justify-start px-[30px] gap-[10px] cursor-pointer'>
-        <img src="../src/assets/logo.png" alt='logo' className='w-[40px]' />
+        <img src={logo} alt='logo' className='w-[40px]' />
         <h1 className='text-[22px] font-sans'>one cart</h1>
       </div>
 

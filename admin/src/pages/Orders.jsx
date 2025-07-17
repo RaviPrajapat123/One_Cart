@@ -88,7 +88,7 @@ function Orders() {
       onChange={async (e) => {
         const newStatus = e.target.value;
         try {
-          const res = await axios.put("http://localhost:3000/updateStatus", {
+          const res = await axios.put("https://one-cart-backend-mene.onrender.com/updateStatus", {
             orderId: order._id,
             status: newStatus
           }, { withCredentials: true });

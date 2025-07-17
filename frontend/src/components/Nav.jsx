@@ -19,7 +19,7 @@ function Nav() {
 
   const handleLogOut = async () => {
     try {
-      await axios.get("https://one-cart-backend-mene.onrender.com", { withCredentials: true });
+      await axios.get("https://one-cart-backend-mene.onrender.com/userLogout", { withCredentials: true });
       setCurrentUser(null);
       navigate("/login");
       setShowProfile(false);

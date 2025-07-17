@@ -6,12 +6,15 @@ import List from './pages/List'
 import Orders from './pages/Orders'
 import Login from './pages/Login'
 import { AdminProvider } from './context/authContext'
+import { Navigate } from 'react-router-dom';
 
 import ProtectedAdminRoute from './components/ProtectedAdminRoute';
 
 const AppContent = () => {
   return (
     <Routes>
+      <Route path='/' element={<Navigate to="/admin/login" />} />
+
       <Route path='/admin/login' element={<Login />} />
 
       <Route path='/admin/home' element={

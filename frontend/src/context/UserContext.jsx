@@ -9,7 +9,7 @@ export const UserProvider = ({ children }) => {
 
   const fetchCurrentUser = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/currentUser", {
+      const res = await axios.get("https://one-cart-backend-mene.onrender.com/currentUser", {
         withCredentials: true,
       });
       setCurrentUser(res.data.user);

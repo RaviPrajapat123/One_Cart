@@ -17,7 +17,7 @@ dotenv.config();
 
 
 await fastify.register(cors, {
-  origin: ["http://localhost:5173","http://localhost:5174"], // ✅ frontend ka exact origin
+  origin: ["https://one-cart-frontend1.onrender.com","http://localhost:5174"], // ✅ frontend ka exact origin
   credentials: true,    
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']           // ✅ allow cookies
 });

@@ -8,7 +8,7 @@ function Nav() {
     const {fetchAdmin}=useAdmin()
     const logOut=async()=>{
             try {
-      await axios.get("http://localhost:3000/adminLogout", { withCredentials: true });
+      await axios.get("https://one-cart-backend-mene.onrender.com/adminLogout", { withCredentials: true });
       fetchAdmin()
       navigate("/admin/login");
       

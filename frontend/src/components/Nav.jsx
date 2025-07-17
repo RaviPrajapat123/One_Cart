@@ -66,7 +66,7 @@ function Nav() {
         )}
 
         <MdOutlineShoppingCart className='w-7 h-7 text-black cursor-pointer hidden md:block' onClick={()=>navigate("/cart")} />
-        <p className='absolute top-[-4px] right-[-4px] w-5 h-5 text-xs bg-black text-white rounded-full flex items-center justify-center hidden md:flex'>
+        <p className='absolute top-[-4px] right-[-4px] w-5 h-5 text-xs bg-black text-white rounded-full  items-center justify-center hidden md:flex'>
           {getCartCount()}
         </p>
       </div >

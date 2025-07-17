@@ -15,7 +15,7 @@ function ShopContext({ children }) {
 
     const getproducts = async () => {
         try {
-            const result = await axios.get("http://localhost:3000/allProducts",{withCredentials:true});
+            const result = await axios.get("https://one-cart-backend-mene.onrender.com/allProducts",{withCredentials:true});
             // console.log(result.data.data);
             setProudct(result.data.data || []);
         } catch (error) {
@@ -42,7 +42,7 @@ function ShopContext({ children }) {
         setCartItem(cartData);
         if (currentUser) {
             try {
-                let res = await axios.post("http://localhost:3000/addToCart", { itemId, size }, { withCredentials: true })
+                let res = await axios.post("https://one-cart-backend-mene.onrender.com/addToCart", { itemId, size }, { withCredentials: true })
                 if (res.data.success) {
                     alert(res.data.message)
                 }
@@ -58,7 +58,7 @@ function ShopContext({ children }) {
 
     const getUserCard = async () => {
             try {
-                        const result=await axios.get('http://localhost:3000/userCart',{withCredentials:true})
+                        const result=await axios.get('https://one-cart-backend-mene.onrender.com/userCart',{withCredentials:true})
                         setCartItem(result.data.cartData)
             } catch (error) {
                     console.log(error)
@@ -72,7 +72,7 @@ function ShopContext({ children }) {
             if(currentUser){
 
                 try {
-                        await axios.post("http://localhost:3000/updateCart",{itemId,size,quantity},{withCredentials:true})
+                        await axios.post("https://one-cart-backend-mene.onrender.com/updateCart",{itemId,size,quantity},{withCredentials:true})
                 } catch (error) {
                     console.log(error)
                 }

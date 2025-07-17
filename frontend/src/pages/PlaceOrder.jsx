@@ -50,7 +50,7 @@ function PlaceOrder() {
       }
       switch(method){
         case 'cod': 
-        const result= await axios.post("http://localhost:3000/placeOrder",orderData,{withCredentials:true})
+        const result= await axios.post("https://one-cart-backend-mene.onrender.com/placeOrder",orderData,{withCredentials:true})
         // console.log(result.data)
         if(result.data){
           

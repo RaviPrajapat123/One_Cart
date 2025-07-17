@@ -109,7 +109,7 @@ function Orders() {
       <option value="Order Placed">Order Placed</option>
       <option value="Packing">Packing</option>
       <option value="Shipped">Shipped</option>
-      <option value="">Delivered</option>
+      <option value="Delivered">Delivered</option>
       <option value="Out of delivery">Out of delivery</option>
      
     </select>

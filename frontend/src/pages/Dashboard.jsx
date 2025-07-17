@@ -6,7 +6,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/currentUser", {
+      .get("https://one-cart-backend-mene.onrender.com/currentUser", {
         withCredentials: true, // ✅ Token (cookie) bhejega
       })
       .then((res) => {

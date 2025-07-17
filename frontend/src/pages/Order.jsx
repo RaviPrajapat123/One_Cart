@@ -8,7 +8,7 @@ function Order() {
     const {currency}=useContext(shopDataContex)
     const loadOrderData=async()=>{
         try {
-                const result=await axios.get("http://localhost:3000/userOrders",{withCredentials:true})
+                const result=await axios.get("https://one-cart-backend-mene.onrender.com/userOrders",{withCredentials:true})
                 if(result.data){
                     console.log(result.data)
                     let allOrdersItem=[]

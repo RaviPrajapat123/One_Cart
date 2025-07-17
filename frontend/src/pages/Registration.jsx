@@ -35,7 +35,7 @@ function Registration() {
         e.preventDefault()
          setLoading(true);
             try{
-                let response=await axios.post("http://localhost:3000/register",values)
+                let response=await axios.post("https://one-cart-backend-mene.onrender.com/register",values)
                 if(response.data.success){
                     alert("Registration Secessfully")
                     setErrors({})
@@ -71,7 +71,7 @@ function Registration() {
                         let user=response.user
                         let name=user.displayName
                         let email=user.email
-                        const result=await axios.post("http://localhost:3000/googleLogin",{name,email},{withCredentials:true})
+                        const result=await axios.post("https://one-cart-backend-mene.onrender.com/googleLogin",{name,email},{withCredentials:true})
                         // console.log(result.data)
                          fetchCurrentUser()
                         navigate("/")

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-route
 import Registration from "./pages/Registration";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Dashboard from "./pages/DashBoard";
+
 import Nav from "./components/Nav";
 import { useUser, UserProvider } from "./context/UserContext";
 import Collection from "./pages/Collection";

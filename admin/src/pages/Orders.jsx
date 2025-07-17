@@ -10,7 +10,7 @@ function Orders() {
   const [orders,setOrders]=useState([])
   const fetchAllOrders=async()=>{
     try {
-       const result=await axios.get("http://localhost:3000/allOrders",{withCredentials:true})
+       const result=await axios.get("https://one-cart-backend-mene.onrender.com/allOrders",{withCredentials:true})
        setOrders(result.data.data.reverse())
        console.log(result.data.data)
       } catch (error) {

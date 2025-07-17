@@ -77,20 +77,20 @@ function Login() {
     }
   };
 
-    const googleLogin=async()=>{
-                  try{
-                          const response=await signInWithPopup(auth,provider)
-                          let user=response.user
-                          let name=user.displayName
-                          let email=user.email
-                          const result=await axios.post("https://one-cart-backend-mene.onrender.com/googleLogin",{name,email},{withCredentials:true})
-                        //   console.log(result.data)
-                        // fetchCurrentUser()
-                        navigate("/")
-                  }catch(error){
-                          console.log(error)
-                  }
-      }
+    // const googleLogin=async()=>{
+    //               try{
+    //                       const response=await signInWithPopup(auth,provider)
+    //                       let user=response.user
+    //                       let name=user.displayName
+    //                       let email=user.email
+    //                       const result=await axios.post("https://one-cart-backend-mene.onrender.com/googleLogin",{name,email},{withCredentials:true})
+    //                     //   console.log(result.data)
+    //                     // fetchCurrentUser()
+    //                     navigate("/")
+    //               }catch(error){
+    //                       console.log(error)
+    //               }
+    //   }
   return (
     <div className='w-[100vw] h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025] text-white flex flex-col items-center justify-start'>
       

@@ -10,7 +10,7 @@ function Nav() {
             try {
       await axios.get("https://one-cart-backend-mene.onrender.com/adminLogout", { withCredentials: true });
       fetchAdmin()
-      navigate("/admin/login");
+      navigate("/");
       
     } catch (error) {
       console.error("Logout failed:", error);

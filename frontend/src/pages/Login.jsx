@@ -34,7 +34,7 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:3000/login", values, {
+      const response = await axios.post("https://one-cart-backend-mene.onrender.com/login", values, {
         withCredentials: true,
       });
 
@@ -74,7 +74,7 @@ function Login() {
       let user = response.user
       let name = user.displayName
       let email = user.email
-      const result = await axios.post("http://localhost:3000/googleLogin", { name, email }, { withCredentials: true })
+      const result = await axios.post("https://one-cart-backend-mene.onrender.com/googleLogin", { name, email }, { withCredentials: true })
       //   console.log(result.data)
       setTimeout(async () => {
         await fetchCurrentUser();

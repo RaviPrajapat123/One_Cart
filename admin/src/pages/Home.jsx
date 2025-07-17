@@ -15,7 +15,7 @@ function Home() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/admin/stats', { withCredentials: true });
+        const response = await axios.get('https://one-cart-backend-mene.onrender.com/admin/stats', { withCredentials: true });
         setStats(response.data);
       } catch (error) {
         console.error('Error fetching admin stats:', error);

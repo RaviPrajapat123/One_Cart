@@ -41,7 +41,7 @@ function Add() {
         const data = new FormData();
         data.append("file", file);
         try {
-            const res = await axios.post("http://localhost:3000/upload-image", data, {
+            const res = await axios.post("https://one-cart-backend-mene.onrender.com/upload-image", data, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -78,7 +78,7 @@ function Add() {
                 date: Date.now(),
             };
 
-            const res = await axios.post("http://localhost:3000/addProduct", payload);
+            const res = await axios.post("https://one-cart-backend-mene.onrender.com/addProduct", payload);
             alert("Product added successfully!");
             setErrors({});
             setImage({

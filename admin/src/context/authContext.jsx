@@ -10,7 +10,7 @@ export const AdminProvider = ({ children }) => {
 
   const fetchAdmin = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/currentAdmin", {
+      const res = await axios.get("https://one-cart-backend-mene.onrender.com/currentAdmin", {
         withCredentials: true,
       });
       setAdmin(res.data.admin);

@@ -8,6 +8,7 @@ import axios from 'axios';
 import { signInWithPopup } from 'firebase/auth';
 import {auth, provider } from '../../utils/Firebase';
 import { useUser } from '../context/UserContext';
+import logo from "../assets/logo.png"
 function Registration() {
     const navigate=useNavigate()
     const [show,setShow]=useState(false)
@@ -82,7 +83,7 @@ function Registration() {
   return (
     <div className='w-[100vw] h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025] text-[white] flex flex-col items-center justify-start'>
          <div className='w-[100%] h-[80px] flex items-center justify-start px-[30px] gap-[10px] cursor-pointer' onClick={()=>navigate("/")}>
-            <img src="./src/assets/logo.png" alt='logo' className='w-[40px]'/>
+            <img src={logo} alt='logo' className='w-[40px]'/>
             <h1 className='text-[22px] font-sans'>one cart</h1>
          </div>
          <div className='w-[100%] h-[100px] flex items-center justify-center flex-col gap-[10px]'>
